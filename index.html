@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soubhik Pal - Developer Portfolio</title>
+    <link rel="icon" href="./favicon.png" type="image/png">
+    <meta name="description" content="Soubhik Pal - Full Stack Developer Portfolio">
+    <meta name="keywords" content="Soubhik Pal, portfolio, web developer, React, Node.js, Python, Flask">
+    <meta name="author" content="Soubhik Pal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            /* Adjusts scroll target to account for fixed nav height */
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #020c1b;
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            justify-content: space-evenly;
+        }
+
+        nav .left {
+            margin-left: 2rem;
+            font-size: 1.4rem;
+            font-weight: 1000;
+            color: #fdfeff;
+        }
+
+        nav .right a {
+            color: #ccd6f6 !important;
+            margin: 0 1.0rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .right a:hover {
+            color: #0550e6 !important;
+        }
+
+        /* Hero Section */
+        .firstSection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 3rem 1.5rem;
+            min-height: 70vh;
+        }
+
+        .leftSection {
+            max-width: 500px;
+        }
+
+        .leftSection h2 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .leftSection h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #8892b0;
+            margin-bottom: 1.5rem;
+        }
+
+        .purple {
+            color: #64ffda;
+        }
+
+        #element {
+            color: #64ffda;
+            font-weight: 600;
+        }
+
+        .rightSection img {
+            width: 100%;
+            max-width: 285px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(100, 255, 218, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .rightSection img:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn {
+            margin: 0.5rem 0.75rem 0 0;
+            padding: 0.6rem 1.2rem;
+            background-color: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #64ffda;
+            color: #0a192f;
+            transform: translateY(-2px);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 6vw;
+            border-left: 2px solid #64ffda;
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.25rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #64ffda;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(100, 255, 218, 0.4);
+        }
+
+        .timeline-content h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-content .date {
+            color: #64ffda;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-content p {
+            color: #8892b0;
+            font-size: 0.85rem;
+        }
+
+        /* Certifications */
+        .certifications {
+            list-style: none;
+            padding-left: 6vw;
+            color: #ccd6f6;
+            line-height: 1.8;
+        }
+
+        .certifications li {
+            font-size: 0.85rem;
+        }
+
+        .certifications li::before {
+            content: '✔';
+            color: #64ffda;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020c1b;
+            padding: 1.5rem;
+            text-align: center;
+            color: #8892b0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            font-size: 0.85rem;
+        }
+
+        .social-links a {
+            color: #64ffda;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ccd6f6;
+        }
+
+        #about h2,
+        #skills h2,
+        #projects h2,
+        #contact h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-top: 80px;
+            /* Adds padding to section headings for scroll offset */
+        }
+
+        #about p,
+        #skills li,
+        #projects li,
+        #contact p {
+            font-size: 0.9rem;
+            color: #8892b0;
+        }
+
+        #skills ul {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+
+        #contact input,
+        #contact textarea {
+            background-color: transparent;
+            border: 1px solid #64ffda;
+            color: #ccd6f6;
+            margin-bottom: 0.8rem;
+        }
+
+        #contact input::placeholder,
+        #contact textarea::placeholder {
+            color: #8892b0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .leftSection,
+            .rightSection {
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .leftSection h2 {
+                font-size: 1.75rem;
+            }
+
+            .leftSection h4 {
+                font-size: 1rem;
+            }
+
+            nav .right a {
+                margin: 0 0.4rem;
+                font-size: 0.8rem;
+            }
+
+            .timeline {
+                padding-left: 4vw;
+            }
+
+            .certifications {
+                padding-left: 4vw;
+            }
+
+            #about h2,
+            #skills h2,
+            #projects h2,
+            #contact h2 {
+                padding-top: 60px;
+                /* Smaller offset for smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .leftSection h2 {
+                font-size: 1.5rem;
+            }
+
+            .leftSection h4 {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .rightSection img {
+                max-width: 250px;
+            }
+
+            .timeline-content h3 {
+                font-size: 1rem;
+            }
+
+            .timeline-content p,
+            .certifications li {
+                font-size: 0.8rem;
+            }
+
+            #about h2,
+            #skills h2,
+            #projects h2,
+            #contact h2 {
+                padding-top: 50px;
+                /* Even smaller offset for very small screens */
+            }
+        }
+
+        :root {
+            --bg-color: #0a192f;
+            --accent: #64ffda;
+            --text-light: #ccd6f6;
+            --text-muted: #8892b0;
+            --font-base: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-light);
+            font-family: var(--font-base);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="d-flex justify-content-between align-items-center">
+        <div class="left fw-bold">Soubhik Pal</div>
+        <div class="right">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="firstSection container">
+        <div class="leftSection" data-aos="fade-up">
+            <h2>Hi, I'm <span class="purple">Soubhik Pal</span></h2>
+            <h4>I am a passionate <span id="element"></span></h4>
+            <div class="buttons">
+                <a href="./Soubhik_Pal_Resume.pdf" download class="btn">Download Resume</a>
+                <a href="https://github.com/SoubhikP" class="btn" target="_blank">Visit GitHub</a>
+                <a href="https://www.linkedin.com/in/soubhik-pal-b92156349/" class="btn" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="rightSection" data-aos="fade-left">
+            <img src="./soubhik-profile.jpg" alt="Soubhik Pal">
+        </div>
+    </section>
+
+    <hr style="border-color: #64ffda; opacity: 0.5; width: 90vw; margin: 2rem auto;">
+
+    <section class="container" data-aos="fade-up">
+        <div style="margin-top: 1rem;">
+            <span style="color: #8892b0; font-size: 0.85rem;">What I have done so far</span>
+        </div>
+        <h2 class="mb-3" style="font-size: 1.6rem;">Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Full Stack Developer Intern - Indolike IT Solutions</h3>
+                    <span class="date">2025</span>
+                    <p>Worked on a CRM platform using React.js and Node.js. Built REST APIs, user dashboards, and
+                        deployed on AWS EC2 with MongoDB backend integration.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Web Developer Intern - Pinnacle Labs</h3>
+                    <span class="date">2025</span>
+                    <p>Created a responsive admin dashboard for analytics using React.js and Chart.js. Focused on
+                        performance optimization and UI consistency.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Freelance Frontend Developer - Local Business Website</h3>
+                    <span class="date">2025</span>
+                    <p>Built and deployed a custom website for a local travel agency using HTML, CSS, JavaScript, and
+                        Bootstrap. Delivered SEO-friendly and mobile-optimized design.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Personal Client Project - Portfolio Website for Photographer</h3>
+                    <span class="date">2024</span>
+                    <p>Designed a personal portfolio with gallery, contact form, and smooth animations using Vanilla JS
+                        and CSS. Hosted with GitHub Pages.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>AI Developer - SmartCity Hackathon</h3>
+                    <span class="date">2025</span>
+                    <p>Developed a Smart Parking System using OpenCV and IoT. Integrated real-time slot tracking and
+                        achieved recognition for innovation.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Full Stack Developer - AI Hospital Project</h3>
+                    <span class="date">2024</span>
+                    <p>Led a college project to build an AI-based HMS using Flask, MySQL, and HTML/CSS. Streamlined
+                        discharge summaries and patient modules.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Web Development Trainee - CodeClause</h3>
+                    <span class="date">2024</span>
+                    <p>Completed real-world web dev training including form validation, UI design, and layout principles
+                        using HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Open Source Contributor - GitHub</h3>
+                    <span class="date">2024</span>
+                    <p>Contributed to open-source React UI components and resolved issues in beginner-friendly
+                        repositories. Practiced Git, pull requests, and issue tracking.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-4" style="font-size: 1.5rem;">Certifications & Achievements</h2>
+        <ul class="certifications">
+            <li>Certified in <strong>Full Stack Web Development</strong> by Udemy</li>
+            <li>Completed <strong>Python for Everybody</strong> (University of Michigan – Coursera)</li>
+            <li>Participated in <strong>Smart India Hackathon 2024</strong></li>
+            <li>Finalist - <strong>SmartCity Hackathon</strong>, Amity University</li>
+            <li>Top 10% scorer in <strong>CodeKaze National Coding Contest</strong> by Coding Ninjas</li>
+            <li>Attended workshops on <strong>AI/ML, Web 3.0, and DevOps</strong></li>
+        </ul>
+    </section>
+
+    <section id="about" class="container my-5" data-aos="fade-up">
+            <h2>About Me</h2>
+            <p>
+                I am a final-year B.Tech Computer Science and Engineering student at Amity University Kolkata,
+                graduating in 2026. Enthusiastic about Software development, I build practical software solutions. My
+                projects include an AI-powered hospital management system and an IoT-based smart parking solution
+                driving efficiency and inn ovation. I actively engage in hackathons, coding competitions, and workshops
+                on AI/ML and web development to sharpen my skills. A collaborative team player, I bring strong
+                problem-solving, adaptability, and a commitment to delivering impactful tech solutions.
+            </p>
+        </section>
+        </p>
+    </section>
+
+    <section id="skills" class="container my-5" data-aos="fade-up">
+        <h2>Skills</h2>
+        <ul>
+            <li>c, c++</li>
+            <li>Python, Java</li>
+            <li>HTML5, CSS3, JavaScript</li>
+            <li>Django, Flask</li>
+            <li>React.js, Bootstrap</li>
+            <li>Node.js, Express.js</li>
+            <li>MySQL, DBMS</li>
+            <LI>REST APIs, Postman</LI>
+            <li>Git, GitHub</li>
+            <li>AI, ML, Web Development</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="container my-5" data-aos="fade-up">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Smart Parking System:</strong> IoT-based real-time slot detector. <a href="#">GitHub</a></li>
+            <li><strong>AI Hospital Management:</strong> Smart discharge and patient modules. <a href="#">GitHub</a>
+            </li>
+            <li><strong>Photographer Portfolio:</strong> Freelance project with responsive gallery. <a href="#">Live</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact" class="container my-5" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <form action="mailto:soubhikpal.contact@gmail.com" method="POST" enctype="text/plain">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Soubhik Pal's Developer Portfolio</p>
+        <div class="social-links">
+            <a href="https://github.com/SoubhikP" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/soubhik-pal-b92156349/" target="_blank">LinkedIn</a>
+        </div>
+        <p class="mt-2">© 2025 Soubhik Pal | All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            once: true
+        });
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Full Stack Developer', 'Software Developer'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>
