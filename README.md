@@ -3,7 +3,8 @@
 Welcome to my personal portfolio website — a modern, responsive, and professionally styled showcase of my skills, projects, experience, and certifications. This site is built to create a strong first impression for recruiters, internship opportunities, placements and collaborations.
 
 ### 🔗 Live Site  
-**🌐 [View Portfolio Online](https://soubhikp.github.io/Soubhik-Portfolio/)**
+🌐 **View Portfolio:** [https://soubhikp.github.io/Soubhik-Portfolio/](https://soubhikp.github.io/Soubhik-Portfolio/)  
+📦 **Repository:** [github.com/SoubhikP/Soubhik-Portfolio](https://github.com/SoubhikP/Soubhik-Portfolio)
 
 ---
 
@@ -30,15 +31,19 @@ Welcome to my personal portfolio website — a modern, responsive, and professio
 
 ## 📁 Project Structure
 
+Soubhik-Portfolio/
+
 ├── index.html
 
 ├── soubhik-profile.jpg
 
 ├── Soubhik_Pal_Resume.pdf
 
-├── /assets (if used)
+├── favicon.png
 
-├── README.md
+├── /assets
+
+└── README.md
 
 ---
 
