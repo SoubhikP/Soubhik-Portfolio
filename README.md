@@ -51,9 +51,9 @@ Soubhik-Portfolio/
 
 If you'd like to connect:
 
-- 📧 Email: [soubhikpal.contact@gmail.com](mailto:soubhikpal.contact@gmail.com)
+- 📧 Email: [palsoubhik1073@gmail.com](mailto:palsoubhik1073@gmail.com)
 - 🌐 LinkedIn: [linkedin.com/in/soubhik-pal-b92156349](https://linkedin.com/in/soubhik-pal-b92156349)
-- 🐙 GitHub: [@SoubhikP](https://github.com/SoubhikP)
+- 🐙 GitHub: [github.com/SoubhikP](https://github.com/SoubhikP)
 
 ---
 
